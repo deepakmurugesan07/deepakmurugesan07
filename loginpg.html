@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <style>
+         body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            background: black;
+            color: #fff;
+            z-index: 1000;
+            /* Ensure it's above other content */
+            padding: 8px 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+              margin: 0;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 1rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            display: block;
+            font-size:20px;
+        }
+
+        .nav-links a:hover {
+            background: #555;
+            border-radius: 4px;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .menu-icon::before {
+            content: '\2630';
+            /* Unicode character for hamburger icon */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: #333;
+                flex-direction: column;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 0;
+            }
+
+            .nav-links a {
+                padding: 1rem;
+                text-align: center;
+                display: block;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        } 
+
+        /* Main Content Styling */
+        main {
+            padding: 1rem;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-family: Arial, Helvetica, sans-serif;
+            text-shadow: 3PX 3PX 5PX grey;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .container {
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+
+        .container div {
+
+            margin: 10px;
+            flex-basis: 20%;
+            width: 350px;
+            box-shadow: 2px 5px 15px;
+            color: #666;
+
+        }
+
+        li img {
+            justify-content: right;
+            height: 50%;
+            width: auto;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        .search-container input {
+            padding: 8px;
+            font-size: 16px;
+            border: none;
+            border-radius: 0 4px 4px 0;
+
+        }
+
+        .search-container button {
+            padding: 8px 15px;
+            font-size: 16px;
+            border: none;
+            background-color: #555;
+            color: white;
+            cursor: pointer;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .search-container button:hover {
+            background-color: #777;
+        }
+        .bg-img {
+            background-image: url(images/pg-img.jpg);
+            min-height: 100vh;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .containe {
+            position: relative;
+            max-width: 300px;
+            padding: 16px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: black;
+        }
+
+        b {
+            color: black;
+            font-size: 18px;
+
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+
+            box-sizing: border-box;
+        }
+
+        .button {
+            background-color: black;
+            color: white;
+            padding: 14px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .button:hover {
+            background-color: lightslategray;
+        }
+        a.nav-button {
+            color: blue;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            display: block;
+            transition: background-color 0.3s;
+            float: right;
+        }
+
+        a.nav-button:hover {
+            background-color:skyblue;
+            border-radius: 4px;
+        }
+        .footer {
+            background-color: black;
+            width: 100%;
+        }
+
+        .social {
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .social a {
+            font-size: 20px;
+            display: inline-block;
+            border: 1px solid beige;
+            color: whitesmoke;
+            width: 25px;
+            padding: 10px;
+            border-radius: 8px;
+            justify-items: space-between;
+
+
+        }
+
+        .social i {
+            align-items: center;
+        }
+
+        .social a:hover {
+            background-color: antiquewhite;
+        }
+
+        .footer ul {
+
+            list-style: none;
+            text-align: center;
+            padding-bottom: 30px;
+            text-decoration: none;
+        }
+
+        .footer ul li {
+            display: inline-block;
+            padding: 0px 15px;
+            color: whitesmoke;
+
+        }
+
+        .footer ul li a {
+            text-decoration: none;
+            color: whitesmoke;
+
+
+        }
+
+        .copy-rights {
+            text-align: center;
+            padding-bottom: 30px;
+            color: whitesmoke;
+            text-decoration: none;
+
+        }
+
+       
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+    
+
+    <body>
+        <header>
+            <nav>
+                <div class="container">
+                    <log class="logo"><a href="#">Sleepy Owl</a></log>
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="shopping.html">shopping</a></li>
+                        <li><a class= "nav-button"  href="loginpg.html">Login</a></li>
+                        <li><a class= "nav-button"  href="#">SignUp</a></li></ul>
+                    <div class="search-container">
+                        <input type="text" placeholder="Search Products"><button type="button">Search</button>
+                    </div>
+    
+                    <button class="menu-toggle" aria-label="Toggle menu">
+                        <span class="menu-icon"></span>
+                    </button>
+                </div>
+    
+            </nav>
+        </header><br>
+        <div class="bg-img">
+            <h1>Login</h1>
+    
+            <form class="containe">
+                <b>Username</b>
+                <input type="text" placeholder="Enter your username" name="username" required>
+    
+                <b>Password</b>
+                <input type="password" placeholder="Enter your password" name="password" required>
+    
+                <button type="submit" class="button">Login</button>
+            </form>
+            
+        </div>
+        <br>
+        <section class="footer">
+            <div class="social">
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-square-x-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+    
+            </div>
+            <ul>
+                <li><a href="#">Get Help</a></li>
+                <li><a href="#">Contact </a></li>
+                <li><a href="#">Online Shop</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+    
+            <p class="copy-rights">@Copyright 2030 all rights reserved</p>
+    
+        </section>
+    
+    
+    
+    
+    
+    
+        </body>
+</html>
+ 

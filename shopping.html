@@ -1,0 +1,394 @@
+<html>
+    <head>
+        <style>
+            body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        
+        header {
+            position: sticky;
+            top: 0;
+            background: black;
+            color: #fff;
+            z-index: 1000;
+            /* Ensure it's above other content */
+            padding: 10px 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+              margin: 0;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 1rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            display: block;
+            font-size: 20px;
+        }
+
+        .nav-links a:hover {
+            background: #555;
+            border-radius: 4px;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .menu-icon::before {
+            content: '\2630';
+            /* Unicode character for hamburger icon */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                
+                left: 0;
+                width: 100%;
+                background: #333;
+                flex-direction: column;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 0;
+            }
+
+            .nav-links a {
+                padding: 1rem;
+                text-align: center;
+                display: block;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        } 
+        .search-container {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+
+        .search-container input {
+            padding: 8px;
+            font-size: 16px;
+            border: none;
+            border-radius: 0 4px 4px 0;
+
+        }
+
+        .search-container button {
+            padding: 8px 15px;
+            font-size: 16px;
+            border: none;
+            background-color: #555;
+            color: white;
+            cursor: pointer;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .search-container button:hover {
+            background-color: #777;
+        }
+        a.nav-button {
+            margin: 0 1rem;
+            padding: 1rem;
+        }
+
+        a.nav-button {
+            color: blue;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            display: block;
+            transition: background-color 0.3s;
+            float: right;
+        }
+
+        a.nav-button:hover {
+            background-color:skyblue;
+            border-radius: 4px;
+        }
+
+.containern{
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    backdrop-filter:blur(30px);
+    box-shadow: 0 0 10px whitesmoke;
+    border-radius: 8px;
+    /* background-color: white; */ 
+
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font: size 8px;
+    font-weight: bold;
+    color:black;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color:black;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color:lightslategray;
+}
+.background{
+    background-image: url(images/cfe.jpeg);
+}
+.footer {
+            background-color: black;
+            width: 100%;
+        }
+
+        .social {
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .social a {
+            font-size: 20px;
+            display: inline-block;
+            border: 1px solid beige;
+            color: whitesmoke;
+            width: 25px;
+            padding: 10px;
+            border-radius: 8px;
+            justify-items: space-between;
+
+
+        }
+
+        .social i {
+            align-items: center;
+        }
+
+        .social a:hover {
+            background-color: antiquewhite;
+        }
+
+        .footer ul {
+
+            list-style: none;
+            text-align: center;
+            padding-bottom: 30px;
+            text-decoration: none;
+        }
+
+        .footer ul li {
+            display: inline-block;
+            padding: 0px 15px;
+            color: whitesmoke;
+
+        }
+
+        .footer ul li a {
+            text-decoration: none;
+            color: whitesmoke;
+
+
+        }
+
+        .copy-rights {
+            text-align: center;
+            padding-bottom: 30px;
+            color: whitesmoke;
+            text-decoration: none;
+
+        }
+
+        </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        
+         <header>
+                <nav>
+                    <div class="container">
+                        <log class="logo"><a href="#">Sleepy Owl</a></log>
+                        <ul class="nav-links">
+                            <li><a href="nav.html">Home</a></li>
+                            <li><a href="shopping.html">shopping</a></li>
+                            <li><a href="#"img src="">Contact</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a class= "nav-button"  href="loginpg.html">Login</a></li>
+                            <li><a class= "nav-button"  href="#">SignUp</a></li>
+                        </ul>
+                        <div class="search-container">
+                            <input type="text" placeholder="Search Products"><button type="button">Search</button>
+                        </div>
+                        <a href=""><i class="fa-brands fa-cart"></i></a>
+         
+        
+                        <button class="menu-toggle" aria-label="Toggle menu">
+                            <span class="menu-icon"></span>
+                        </button>
+                    </div>
+        
+                </nav>
+            </header>
+
+<div class="background">
+            <div class="containern">
+                <h1>Shopping Checkout Form</h1>
+                <form action="#" method="post">
+                    <fieldset>
+                        <legend>Personal Information</legend>
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" required>
+        
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+        
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </fieldset>
+        
+                    <fieldset>
+                        <legend>Shipping Address</legend>
+                        <label for="address">Address:</label>
+                        <input type="text" id="address" name="address" required>
+        
+                        <label for="city">City:</label>
+                        <input type="text" id="city" name="city" required>
+        
+                        <label for="state">State:</label>
+                        <input type="text" id="state" name="state" required>
+        
+                        <label for="zip">ZIP Code:</label>
+                        <input type="text" id="zip" name="zip" required>
+                    </fieldset>
+        
+                    <fieldset>
+                        <legend>Payment Information</legend>
+                        <label for="card-name">Cardholder Name:</label>
+                        <input type="text" id="card-name" name="card-name" required>
+        
+                        <label for="card-number">Card Number:</label>
+                        <input type="text" id="card-number" name="card-number" required>
+        
+                        <label for="expiry">Expiry Date:</label>
+                        <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+        
+                        <label for="cvv">CVV:</label>
+                        <input type="text" id="cvv" name="cvv" required>
+                    </fieldset>
+        
+                    <button type="submit">Place Order</button>
+                </form>
+            </div>
+        </div>
+        <br>
+        <section class="footer">
+            <div class="social">
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-square-x-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+    
+            </div>
+            <ul>
+                <li><a href="#">Get Help</a></li>
+                <li><a href="#">Contact </a></li>
+                <li><a href="#">Online Shop</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+    
+            <p class="copy-rights">@Copyright 2030 all rights reserved</p>
+    
+        </section>
+    
+    
+    
+    
+        
+        
+
+    </body>
+</html>
